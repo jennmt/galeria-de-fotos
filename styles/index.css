@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body{
+    background-color: rgb(249, 248, 241);
+}
+
+header h1{
+    text-align: center;
+    padding: 15px;
+    font-family: "Philosopher", sans-serif;
+    font-style: normal;
+    font-size: 4rem;
+}
+
+main{
+    display: grid;
+    /* en todos los tamaños de pantallas siempre habrá 3 columnas del mismo tamaño cada una*/
+    /* si queremos tener un numero de columnas definido por cada tamaño de pantalla podemos usar breakpoints css */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card{
+    width: 100%;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px gainsboro;
+    transition: all 0.2s; /* 0.2 segundos */
+}
+
+.card:hover{
+    transform: scale(1.05);
+    /* cursor: pointer; */
+}
+
+/* imagen que es hijo directo de card: */
+.card > img{
+    width: 100%;
+}
+
+.card > h3{
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 5px 10px; /* arriba y abajo 5px y derecha e izquierda 10px */
+}
+
+
+/* Breakpoints css */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: aqua; /* cuando el tamaño de nuestra pantalla sea de 600px el fondo será color aqua */
+    }
+    main{ /* con esto logramos que cuando el tamaño de la pantalla sea de 600px aparezcan solamente 2 columnas de fotos*/
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    main{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    main{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    main{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
